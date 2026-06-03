@@ -1,0 +1,74 @@
+{
+  "name": "ילד פלוס",
+  "short_name": "ילד פלוס",
+  "description": "פלטפורמה אינטראקטיבית לילדים המשלבת יצירה, למידה ומשחקים",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#a855f7",
+  "dir": "rtl",
+  "lang": "he",
+  "categories": ["education", "games", "entertainment"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-2.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "התחיל ללמוד",
+      "short_name": "למידה",
+      "description": "התחל בקורסים חדשים",
+      "url": "/auth/kids-login?redirect=learn",
+      "icons": [
+        {
+          "src": "/shortcut-learn.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "בואו ליצור",
+      "short_name": "יצירה",
+      "description": "צור משהו חדש ומדהים",
+      "url": "/auth/kids-login?redirect=create",
+      "icons": [
+        {
+          "src": "/shortcut-create.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

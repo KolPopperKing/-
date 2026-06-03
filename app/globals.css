@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hebrew Typography */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Heebo:wght@300;400;500;600;700;800;900&family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --clay-purple: #a855f7;
+  --clay-pink: #ec4899;
+  --clay-cyan: #22d3ee;
+  --clay-blue: #3b82f6;
+  --clay-glow: rgba(168, 85, 247, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+  font-family: 'Rubik', 'Heebo', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  color: #e5e7eb;
+  overflow-x: hidden;
+}
+
+/* Disable default scrollbar styling on most elements */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #a855f7, #ec4899);
+  border-radius: 10px;
+  border: 2px solid rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c084fc, #f472b6);
+}
+
+/* Global Animations */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Component Classes */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-clay-cyan to-clay-purple text-white font-bold rounded-xl hover:shadow-lg hover:shadow-clay-purple/50 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-clay-purple text-clay-purple font-bold rounded-xl hover:bg-clay-purple/10 transition-all duration-300;
+}
+
+.card-clay {
+  @apply rounded-2xl bg-gradient-to-br from-clay-purple/20 to-clay-pink/20 border border-clay-purple/30 backdrop-blur-sm;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-clay-cyan via-clay-purple to-clay-pink bg-clip-text text-transparent;
+}
+
+.glow-text {
+  @apply drop-shadow-[0_0_10px_rgba(168,85,247,0.3)];
+}
+
+/* Section Spacing */
+.section-padding {
+  @apply py-20 md:py-32 px-4 md:px-8;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none;
+  }
+}

@@ -82,11 +82,6 @@ export default function CreateAndPlaySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <motion.div
-                className={`relative group h-full rounded-3xl p-6 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-100 transition-all duration-300 -z-10 absolute inset-0`}
-                style={{ filter: 'blur(1px)' }}
-              />
-
               <div className="relative h-full rounded-3xl p-6 bg-slate-900/50 border border-purple-400/30 backdrop-blur-md hover:border-purple-300/60 transition-all duration-300 overflow-hidden group cursor-pointer">
                 {/* Hover Glow */}
                 <motion.div
@@ -114,19 +109,6 @@ export default function CreateAndPlaySection() {
                     בואו נתחיל →
                   </motion.div>
                 </div>
-
-                {/* Border Glow */}
-                <motion.div
-                  className={`absolute inset-0 rounded-3xl border border-transparent group-hover:border-purple-300/50 transition-all duration-300`}
-                  animate={{
-                    boxShadow: [
-                      `inset 0 0 20px rgba(168, 85, 247, 0)`,
-                      `inset 0 0 40px rgba(168, 85, 247, 0.2)`,
-                      `inset 0 0 20px rgba(168, 85, 247, 0)`,
-                    ],
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
               </div>
             </motion.div>
           ))}
